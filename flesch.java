@@ -19,14 +19,21 @@ public class flesch
     Scanner scan = new Scanner(File(translation));
      
     ArrayList<String> vals= new ArrayList<String>();
+    
         while(scan.hasNext())
         {
             String words= scan.next();
             vals.add(words);
+        
         }
 
+        char c;
+        int vowel=0;
+        int syllable=0;
+        int numWords;
     
-        
+        Scanner dc = new Scanner(System.in(/pub/pounds/CSC330/dalechall))
+    
 
 
 
