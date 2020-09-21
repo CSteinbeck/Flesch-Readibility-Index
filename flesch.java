@@ -11,7 +11,7 @@ public class flesch
     public static void main(Strings[] args) 
     {
         //Takes the users command line input
-    System.out.println("Please enter the file location of the translations you would like to use: ");
+    System.out.println("Please enter specific file locations for translations: ");
     Scanner tScan = new Scanner(System.in);
     String translation = tScan.nextLine();
 
@@ -30,7 +30,7 @@ public class flesch
 
 
         
-        //Pulls the Dale-Chall List of words back into the 
+        //Pulls the Dale-Chall words into storage 
         Scanner dc = new Scanner(System.in("/pub/pounds/CSC330/dalechall"));
         Map<String, Object> dcStorage = new HashMap<String, Object>();
         
@@ -91,10 +91,14 @@ public class flesch
 		double flesch = 206.835 - (alpha * 84.6) - (beta * 1.015);
 		double grade = (alpha * 11.8) + (beta * 0.39) - 15.59;
 		double readability;
-		if (gamma > 0.05)
-			readability = ((gamma * 100.0) * 0.1579) + (beta * 0.0496) + 3.6365;
-		else
-			readability = ((gamma * 100.0) * 0.1579) + (beta * 0.0496);
+        if (gamma > 0.05)
+        {
+            readability = ((gamma * 100.0) * 0.1579) + (beta * 0.0496) + 3.6365;
+        }
+        else
+        {
+            readability = ((gamma * 100.0) * 0.1579) + (beta * 0.0496);
+        }
 
 		System.out.println("The Flesch Readability index is: " + flesch);
 		System.out.println("The Flesh-Kincaid Grade Level index is: " + grade);
@@ -118,7 +122,7 @@ public class flesch
        int syllableCount=0;
         char state= "x";
         // 1. Adjacent vowels to count as syllable  
-        for(state : word)
+        for(auto state : word)
         {
             switch(state)
             {
@@ -137,7 +141,10 @@ public class flesch
             }   
             state = isVowel(x)? 'v':'x';
         }
-         if(state=='v'){syllableCount++;}
+         if(state=='v')
+         {
+             syllableCount++;
+         }
 
 
             
@@ -153,24 +160,6 @@ public class flesch
               
           } 
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }
