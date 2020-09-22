@@ -1,9 +1,8 @@
 //Colton Steinbeck//
-//Test comment for the file transfer on Anvil//
+//Flesh Readibilty In Java//
 import java.lang.*;
-import java.util. *;
+import java.util.*;
 import java.io.*;
-import java.Scanner;
 
 public class flesch
 {    
@@ -41,8 +40,8 @@ public class flesch
             dcStorage.put(word,null);
         }
 
-        int words = 0;
-        int syllables = 0;
+        int word = 0;
+        int syllable = 0;
         int sentence = 0;
 
 
@@ -144,10 +143,7 @@ public class flesch
          if(state=='v')
          {
              syllableCount++;
-         }
-
-
-            
+         }  
             //2. Special Case with e at the end of the word
             if(letter == 'e' && i= word.length()-1)
             {

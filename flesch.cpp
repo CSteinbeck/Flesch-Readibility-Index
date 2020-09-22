@@ -1,3 +1,5 @@
+//Colton Steinbeck//
+//Flesh Readibilty In C++//
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -123,7 +125,7 @@ int main()
     }
 
     int word=0;
-    int syllables=0;
+    int syllable=0;
     int sentence=0;
     int difficultWord=0;
 
