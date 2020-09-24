@@ -5,7 +5,7 @@ program parse
     interface
      subroutine get_next_token( inline, outline, word)
        character (*) :: inline
-       character(*), allocatable :: outline, word
+       character(:), allocatable :: outline, word
      end subroutine get_next_token 
     end interface
     
@@ -27,7 +27,7 @@ program parse
 
     subroutine get_next_token( inline, outline, token)
         character (*) :: inline
-        character(*), allocatable :: outline, token 
+        character(:), allocatable :: outline, token 
         integer :: i, j
         logical :: foundFirst, foundLast
         
