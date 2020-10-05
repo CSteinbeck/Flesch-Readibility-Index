@@ -16,21 +16,21 @@ program readerandparser
     end interface
     
     call read_file( long_string, filesize )
-    print *, long_string
-    print *, "Read ", filesize, " characters."
+    !print *, long_string
+    !print *, "Read ", filesize, " characters."
       
-    line= "This is a line"
-    print *, line
-    print *, "The length of the string is ",len(line)
+    !line= "This is a line"
+    !print line
+    !print *, "The length of the string is *, ",len(line)
     
     ! Initialize outline to be same string as line, it will get overwritten in 
     ! the subroutine, but we need it for loop control
-    outline = line
+    outline = long_string
     
     do while (len(outline) .ne. 0)
-      call get_next_token( line, outline, word)
+      call get_next_token( long_string, outline, word)
       print *, word
-      line = outline
+      long_string = outline
                 enddo
 
     end program readerandparser
@@ -46,7 +46,7 @@ program readerandparser
         inquire (file="/pub/pounds/CSC330/translations/KJV.txt", size=filesize)
         open (unit=5,status="old",access="direct",form="unformatted",recl=1,&
         file= "/pub/pounds/CSC330/translations/KJV.txt")
-        allocate( string(filesize) )
+        allocate( character(filesize) :: string)
         
         counter=1
         100 read (5,rec=counter,err=200) input

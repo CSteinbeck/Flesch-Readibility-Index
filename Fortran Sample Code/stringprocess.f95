@@ -33,7 +33,7 @@ program stringprocess
     
     end program stringprocess
 
-    logical function sameString ( string1, string2 ) result(out)
+logical function sameString ( string1, string2 ) result(out)
 
 character(:), allocatable :: string1, string2
 out = .false.
